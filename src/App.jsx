@@ -61,14 +61,34 @@ function App() {
   }}
 >
   {[
-    "CareSync – AWS Healthcare Platform",
-    "Database Migration to AWS",
-    "Housing Market Analysis",
-    "ETL Data Pipeline",
-    "Task Tracker Application",
+    {
+      title: "CareSync – AWS Healthcare Platform",
+      description:
+        "Cloud-native healthcare app using AWS VPC, RDS MySQL, Cognito, API Gateway, Lambda, and CloudFormation.",
+    },
+    {
+      title: "Database Migration to AWS",
+      description:
+        "Database migration project focused on moving relational data to Amazon RDS using AWS DMS and CloudWatch monitoring.",
+    },
+    {
+      title: "Housing Market Analysis",
+      description:
+        "Data analytics project using Python, SQL, Pandas, and visualizations to analyze housing market trends.",
+    },
+    {
+      title: "ETL Data Pipeline",
+      description:
+        "Data engineering pipeline concept using Amazon S3, AWS Glue, Amazon Redshift, and QuickSight.",
+    },
+    {
+      title: "Task Tracker Application",
+      description:
+        "Task management app built with Flask, DynamoDB, EC2, Nginx, and Linux server configuration.",
+    },
   ].map((project) => (
     <div
-      key={project}
+      key={project.title}
       style={{
         backgroundColor: "white",
         padding: "24px",
@@ -76,9 +96,9 @@ function App() {
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
       }}
     >
-      <h3>{project}</h3>
-      <p style={{ marginTop: "10px", color: "#4b5563" }}>
-        Project details coming soon.
+      <h3>{project.title}</h3>
+      <p style={{ marginTop: "10px", color: "#4b5563", lineHeight: "1.5" }}>
+        {project.description}
       </p>
     </div>
   ))}
