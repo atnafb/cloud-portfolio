@@ -123,10 +123,13 @@ function App() {
         >
           <div>
             <h3>AWS</h3>
-            <p>
-              EC2, S3, RDS, VPC, Lambda, API Gateway, CloudFormation,
-              CloudWatch, Route 53, CloudFront, Cognito, Security Group, Subneting, DynamoDB, Aurora
-            </p>
+            <ul>
+              <li>EC2, S3, RDS, Aurora</li>
+              <li>VPC, Subnets, Security Groups</li>
+              <li>Lambda, API Gateway, Cognito</li>
+              <li>CloudFormation, CloudWatch</li>
+              <li>Route 53, CloudFront</li>
+            </ul>
           </div>
 
           <div>
@@ -136,12 +139,42 @@ function App() {
 
           <div>
             <h3>Data Engineering</h3>
-            <p>ETL Pipelines, AWS Glue, Redshift, QuickSight, Pandas, SQLAlchemy, PySpark</p>
+            <p>
+              ETL Pipelines, AWS Glue, Redshift, QuickSight, Pandas,
+              SQLAlchemy, PySpark
+            </p>
           </div>
 
           <div>
             <h3>Tools</h3>
             <p>Git, GitHub, Linux, VS Code, Tableau, Power BI</p>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ marginTop: "60px" }}>
+        <h2 style={{ marginBottom: "20px" }}>Certifications</h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          <div>
+            <h3>AWS re/Start Graduate</h3>
+            <p>Expected July 2026</p>
+          </div>
+
+          <div>
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p>In Progress</p>
+          </div>
+
+          <div>
+            <h3>UNC Charlotte Data Analytics Certificate</h3>
+            <p>Completed 2025</p>
           </div>
         </div>
       </section>
