@@ -1,4 +1,32 @@
 function App() {
+  const projects = [
+    {
+      title: "CareSync – AWS Healthcare Platform",
+      description:
+        "Cloud-native healthcare app using AWS VPC, RDS MySQL, Cognito, API Gateway, Lambda, and CloudFormation.",
+    },
+    {
+      title: "Database Migration to AWS",
+      description:
+        "Database migration project focused on moving relational data to Amazon RDS using AWS DMS and CloudWatch monitoring.",
+    },
+    {
+      title: "Housing Market Analysis",
+      description:
+        "Data analytics project using Python, SQL, Pandas, and visualizations to analyze housing market trends.",
+    },
+    {
+      title: "ETL Data Pipeline",
+      description:
+        "Data engineering pipeline concept using Amazon S3, AWS Glue, Amazon Redshift, and QuickSight.",
+    },
+    {
+      title: "Task Tracker Application",
+      description:
+        "Task management app built with Flask, DynamoDB, EC2, Nginx, and Linux server configuration.",
+    },
+  ];
+
   return (
     <div
       style={{
@@ -33,11 +61,11 @@ function App() {
             maxWidth: "800px",
           }}
         >
-          AWS re/Start graduate and Data Analytics Certificate holder from
-          UNC Charlotte with hands-on experience in cloud architecture,
-          database design, data engineering, and analytics. Passionate about
-          building scalable cloud solutions on AWS and transforming data into
-          meaningful business insights.
+          AWS re/Start graduate and Data Analytics Certificate holder from UNC
+          Charlotte with hands-on experience in cloud architecture, database
+          design, data engineering, and analytics. Passionate about building
+          scalable cloud solutions on AWS and transforming data into meaningful
+          business insights.
         </p>
 
         <div style={{ marginTop: "25px" }}>
@@ -49,60 +77,73 @@ function App() {
       <hr />
 
       <section style={{ marginTop: "40px" }}>
-        <h2 style={{ marginBottom: "20px" }}>
-          Featured Projects
-        </h2>
+        <h2 style={{ marginBottom: "20px" }}>Featured Projects</h2>
 
         <div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-    gap: "20px",
-  }}
->
-  {[
-    {
-      title: "CareSync – AWS Healthcare Platform",
-      description:
-        "Cloud-native healthcare app using AWS VPC, RDS MySQL, Cognito, API Gateway, Lambda, and CloudFormation.",
-    },
-    {
-      title: "Database Migration to AWS",
-      description:
-        "Database migration project focused on moving relational data to Amazon RDS using AWS DMS and CloudWatch monitoring.",
-    },
-    {
-      title: "Housing Market Analysis",
-      description:
-        "Data analytics project using Python, SQL, Pandas, and visualizations to analyze housing market trends.",
-    },
-    {
-      title: "ETL Data Pipeline",
-      description:
-        "Data engineering pipeline concept using Amazon S3, AWS Glue, Amazon Redshift, and QuickSight.",
-    },
-    {
-      title: "Task Tracker Application",
-      description:
-        "Task management app built with Flask, DynamoDB, EC2, Nginx, and Linux server configuration.",
-    },
-  ].map((project) => (
-    <div
-      key={project.title}
-      style={{
-        backgroundColor: "white",
-        padding: "24px",
-        borderRadius: "12px",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-      }}
-    >
-      <h3>{project.title}</h3>
-      <p style={{ marginTop: "10px", color: "#4b5563", lineHeight: "1.5" }}>
-        {project.description}
-      </p>
-    </div>
-  ))}
-</div>
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              style={{
+                backgroundColor: "white",
+                padding: "24px",
+                borderRadius: "12px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+              }}
+            >
+              <h3>{project.title}</h3>
+              <p
+                style={{
+                  marginTop: "10px",
+                  color: "#4b5563",
+                  lineHeight: "1.5",
+                }}
+              >
+                {project.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ marginTop: "60px" }}>
+        <h2 style={{ marginBottom: "20px" }}>Technical Skills</h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          <div>
+            <h3>AWS</h3>
+            <p>
+              EC2, S3, RDS, VPC, Lambda, API Gateway, CloudFormation,
+              CloudWatch, Route 53, CloudFront, Cognito, Security Group, Subneting, DynamoDB, Aurora
+            </p>
+          </div>
+
+          <div>
+            <h3>Programming</h3>
+            <p>Python, SQL, JavaScript</p>
+          </div>
+
+          <div>
+            <h3>Data Engineering</h3>
+            <p>ETL Pipelines, AWS Glue, Redshift, QuickSight, Pandas, SQLAlchemy, PySpark</p>
+          </div>
+
+          <div>
+            <h3>Tools</h3>
+            <p>Git, GitHub, Linux, VS Code, Tableau, Power BI</p>
+          </div>
+        </div>
       </section>
     </div>
   );
