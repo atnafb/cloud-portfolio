@@ -4,26 +4,36 @@ function App() {
       title: "CareSync – AWS Healthcare Platform",
       description:
         "Cloud-native healthcare app using AWS VPC, RDS MySQL, Cognito, API Gateway, Lambda, and CloudFormation.",
+      tags: ["AWS", "RDS", "Lambda", "Cognito"],
+      link: "https://github.com/atnafb/atnafb.git",
     },
     {
       title: "Database Migration to AWS",
       description:
         "Database migration project focused on moving relational data to Amazon RDS using AWS DMS and CloudWatch monitoring.",
+      tags: ["AWS DMS", "RDS", "CloudWatch", "Migration"],
+      link: "https://github.com/atnafb",
     },
     {
       title: "Housing Market Analysis",
       description:
         "Data analytics project using Python, SQL, Pandas, and visualizations to analyze housing market trends.",
+      tags: ["Python", "SQL", "Pandas", "Analytics"],
+      link: "https://github.com/atnafb/NC_housing_market.git",
     },
     {
       title: "ETL Data Pipeline",
       description:
         "Data engineering pipeline concept using Amazon S3, AWS Glue, Amazon Redshift, and QuickSight.",
+      tags: ["S3", "Glue", "Redshift", "QuickSight"],
+      link: "https://github.com/atnafb",
     },
     {
       title: "Task Tracker Application",
       description:
         "Task management app built with Flask, DynamoDB, EC2, Nginx, and Linux server configuration.",
+      tags: ["Flask", "DynamoDB", "EC2", "Linux"],
+      link: "https://github.com/atnafb/taskTracker.git",
     },
   ];
 
@@ -129,6 +139,9 @@ function App() {
                 padding: "24px",
                 borderRadius: "12px",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
               }}
             >
               <h3>{project.title}</h3>
@@ -141,6 +154,46 @@ function App() {
               >
                 {project.description}
               </p>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "8px",
+                  marginTop: "16px",
+                }}
+              >
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    style={{
+                      backgroundColor: "#dbeafe",
+                      color: "#1d4ed8",
+                      padding: "6px 10px",
+                      borderRadius: "999px",
+                      fontSize: "12px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  marginTop: "20px",
+                  display: "inline-block",
+                  textDecoration: "none",
+                  color: "#2563eb",
+                  fontWeight: "600",
+                }}
+              >
+                View Project →
+              </a>
             </div>
           ))}
         </div>
