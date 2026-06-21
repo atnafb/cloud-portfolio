@@ -35,48 +35,83 @@ function App() {
         padding: "60px 40px",
       }}
     >
-      <section style={{ marginBottom: "60px" }}>
-        <h1
-          style={{
-            fontSize: "56px",
-            marginBottom: "10px",
-          }}
-        >
-          Atnafu Ayalew
-        </h1>
+    <nav
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: "40px",
+      paddingBottom: "20px",
+      borderBottom: "1px solid #d1d5db",
+    }}
+    >
+  <h2 style={{ margin: 0 }}>Atnafu Ayalew</h2>
 
-        <h2
-          style={{
-            color: "#2563eb",
-            marginBottom: "20px",
-          }}
-        >
-          Cloud Engineer | Data Engineer
-        </h2>
+    <div style={{ display: "flex", gap: "20px" }}>
+      <a href="#projects" style={{ textDecoration: "none", color: "#111827", fontWeight: "500" }}>Projects</a>
+      <a href="#skills" style={{ textDecoration: "none", color: "#111827", fontWeight: "500" }}>Skills</a>
+      <a href="#certifications" style={{ textDecoration: "none", color: "#111827", fontWeight: "500" }}>Certifications</a>
+      <a href="#contact" style={{ textDecoration: "none", color: "#111827", fontWeight: "500" }}>Contact</a>
+    </div>
+  </nav>
+  <section
+  style={{
+    display: "grid",
+    gridTemplateColumns: "1.5fr 1fr",
+    gap: "40px",
+    alignItems: "center",
+    marginBottom: "60px",
+  }}
+>
+  <div>
+    <h1 style={{ fontSize: "56px", marginBottom: "10px" }}>
+      Atnafu Ayalew
+    </h1>
 
-        <p
-          style={{
-            fontSize: "18px",
-            lineHeight: "1.6",
-            maxWidth: "800px",
-          }}
-        >
-          AWS re/Start graduate and Data Analytics Certificate holder from UNC
-          Charlotte with hands-on experience in cloud architecture, database
-          design, data engineering, and analytics. Passionate about building
-          scalable cloud solutions on AWS and transforming data into meaningful
-          business insights.
-        </p>
+    <h2 style={{ color: "#2563eb", marginBottom: "20px" }}>
+      Cloud Engineer | Data Engineer
+    </h2>
 
-        <div style={{ marginTop: "25px" }}>
-          <button>View Projects</button>
-          <button>Download Resume</button>
-        </div>
-      </section>
+    <p style={{ fontSize: "18px", lineHeight: "1.6", maxWidth: "800px" }}>
+      AWS re/Start graduate and Data Analytics Certificate holder from UNC
+      Charlotte with hands-on experience in cloud architecture, database
+      design, data engineering, and analytics. Passionate about building
+      scalable cloud solutions on AWS and transforming data into meaningful
+      business insights.
+    </p>
 
-      <hr />
+    <div style={{ marginTop: "25px", display: "flex", gap: "16px" }}>
+      <a href="#projects">
+        <button>View Projects</button>
+      </a>
 
-      <section style={{ marginTop: "40px" }}>
+      <button>Download Resume</button>
+    </div>
+  </div>
+
+  <div
+    style={{
+      backgroundColor: "white",
+      padding: "30px",
+      borderRadius: "16px",
+      boxShadow: "0 8px 24px rgba(0, 0, 0, 0.08)",
+    }}
+  >
+    <h3 style={{ marginBottom: "16px", color: "#2563eb" }}>
+      Cloud & Data Focus
+    </h3>
+
+    <ul style={{ lineHeight: "1.8", paddingLeft: "20px" }}>
+      <li>AWS Cloud Engineering</li>
+      <li>Cloud Architecture & Migration</li>
+      <li>Data Engineering & ETL</li>
+      <li>Python, SQL, and Analytics</li>
+      <li>Linux, Git, and Infrastructure</li>
+    </ul>
+  </div>
+</section>
+
+      <section id="projects" style={{ marginTop: "40px" }}>
         <h2 style={{ marginBottom: "20px" }}>Featured Projects</h2>
 
         <div
@@ -111,7 +146,7 @@ function App() {
         </div>
       </section>
 
-      <section style={{ marginTop: "60px" }}>
+      <section id="skills" style={{ marginTop: "60px" }}>
         <h2 style={{ marginBottom: "20px" }}>Technical Skills</h2>
 
         <div
@@ -152,7 +187,7 @@ function App() {
         </div>
       </section>
 
-      <section style={{ marginTop: "60px" }}>
+      <section id="certifications" style={{ marginTop: "60px" }}>
         <h2 style={{ marginBottom: "20px" }}>Certifications</h2>
 
         <div
@@ -179,7 +214,7 @@ function App() {
         </div>
       </section>
 
-      <section style={{ marginTop: "60px", marginBottom: "40px" }}>
+      <section id="contact" style={{ marginTop: "60px", marginBottom: "40px" }}>
         <h2 style={{ marginBottom: "20px" }}>Contact</h2>
 
         <div

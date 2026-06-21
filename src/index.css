@@ -4,7 +4,9 @@ body {
   background-color: #f8fafc;
   color: #1f2937;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 #root {
   width: 100%;
   min-height: 100vh;
