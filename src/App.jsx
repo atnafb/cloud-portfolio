@@ -178,6 +178,36 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section style={{ marginTop: "60px", marginBottom: "40px" }}>
+        <h2 style={{ marginBottom: "20px" }}>Contact</h2>
+
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: "24px",
+            borderRadius: "12px",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+            maxWidth: "700px",
+          }}
+        >
+          <p>
+            <strong>Email:</strong> ayalewatna@gmail.com
+          </p>
+
+          <p>
+            <strong>GitHub:</strong> github.com/atnafb
+          </p>
+
+          <p>
+            <strong>LinkedIn:</strong> https://www.linkedin.com/in/atnafuayalew/
+          </p>
+
+          <p>
+            Open to opportunities in cloud engineering, cloud support, and data engineering.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
