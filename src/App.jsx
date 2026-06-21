@@ -195,12 +195,26 @@ function App() {
             <strong>Email:</strong> ayalewatna@gmail.com
           </p>
 
-          <p>
-            <strong>GitHub:</strong> github.com/atnafb
+          <p style={{ marginBottom: "12px" }}>
+            <strong>GitHub:</strong>{" "}
+            <a 
+            href="https://github.com/atnafb"
+            target="_blank"
+            rel="noreferrer"
+            >
+              github.com/atnafb
+            </a>
           </p>
 
-          <p>
-            <strong>LinkedIn:</strong> https://www.linkedin.com/in/atnafuayalew/
+          <p style={{ marginBottom: "12px" }}>
+            <strong>LinkedIn:</strong>{" "}
+            <a 
+             href="https://www.linkedin.com/in/atnafuayalew/"
+             target="_blank"
+             rel="noreferrer"
+            >
+            linkedin.com/in/atnafuayalew
+            </a> 
           </p>
 
           <p>
