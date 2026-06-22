@@ -55,8 +55,19 @@ button:hover {
     grid-template-columns: 1fr !important;
   }
 
+  section > div[style*="margin-top: 25px"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  section > div[style*="margin-top: 25px"] a,
+  section > div[style*="margin-top: 25px"] button {
+    width: 100% !important;
+  }
+
   button {
-    width: 100%;
+    margin-right: 0;
+    white-space: nowrap;
   }
 }
 @media (max-width: 480px) {
@@ -80,5 +91,16 @@ button:hover {
 
   button {
     padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 360px) {
+  h1 {
+    font-size: 30px !important;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 11px 14px;
   }
 }
