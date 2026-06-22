@@ -49,6 +49,63 @@ const LinkArrowIcon = ({ size = 16, color = "currentColor" }) => (
     <path d="M7 7h10v10" />
   </svg>
 );
+
+const ProjectIcon = ({ type, color }) => {
+  const commonProps = {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 34,
+    height: 34,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: color,
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+  };
+
+  const icons = {
+    healthcare: (
+      <svg {...commonProps}>
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
+        <path d="M12 8v5" />
+        <path d="M9.5 10.5h5" />
+      </svg>
+    ),
+    database: (
+      <svg {...commonProps}>
+        <ellipse cx="12" cy="5" rx="8" ry="3" />
+        <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5" />
+        <path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+      </svg>
+    ),
+    housing: (
+      <svg {...commonProps}>
+        <path d="M3 11 12 3l9 8" />
+        <path d="M5 10v10h14V10" />
+        <path d="M9 20v-6h6v6" />
+      </svg>
+    ),
+    pipeline: (
+      <svg {...commonProps}>
+        <rect x="3" y="4" width="6" height="6" rx="1" />
+        <rect x="15" y="4" width="6" height="6" rx="1" />
+        <rect x="15" y="14" width="6" height="6" rx="1" />
+        <path d="M9 7h6" />
+        <path d="M18 10v4" />
+      </svg>
+    ),
+    task: (
+      <svg {...commonProps}>
+        <rect x="5" y="4" width="14" height="17" rx="2" />
+        <path d="M9 9l1.5 1.5L14 7" />
+        <path d="M9 15l1.5 1.5L14 13" />
+      </svg>
+    ),
+  };
+
+  return icons[type];
+};
+
 function App() {
   const projects = [
     {
@@ -56,6 +113,8 @@ function App() {
       description:
         "Designed an AWS-based healthcare note-taking platform using VPC, Security Group, RDS MySQL, DB Subnet Group, and CloudFormation to support secure cloud-native application deployment.",
       tags: ["AWS", "RDS", "Lambda", "Cognito"],
+      icon: "healthcare",
+      color: "#16a34a",
       link: "https://github.com/atnafb/atnafb",
     },
     {
@@ -63,6 +122,8 @@ function App() {
       description:
         "Database migration project focused on moving relational data to Amazon RDS using AWS DMS and CloudWatch monitoring.",
       tags: ["AWS DMS", "RDS", "CloudWatch", "Migration"],
+      icon: "database",
+      color: "#2563eb",
       link: "https://github.com/atnafb",
     },
     {
@@ -70,13 +131,17 @@ function App() {
       description:
         "Developed a Python and SQL analytics project to analyze housing market trends, pricing, and inventory patterns using data cleaning, transformation, and visualization workflows.",
       tags: ["Python", "SQL", "Pandas", "Analytics"],
+      icon: "housing",
+      color: "#f59e0b",
       link: "https://github.com/atnafb/NC_housing_market",
     },
     {
       title: "ETL Data Pipeline",
       description:
-        "DDesigned a cloud ETL pipeline concept using Amazon S3, AWS Glue, Redshift, and QuickSight to transform raw data into structured datasets for reporting and analytics. [in progress]",
+        "Designed a cloud ETL pipeline concept using Amazon S3, AWS Glue, Redshift, and QuickSight to transform raw data into structured datasets for reporting and analytics. [in progress]",
       tags: ["S3", "Glue", "Redshift", "QuickSight"],
+      icon: "pipeline",
+      color: "#7c3aed",
       link: "https://github.com/atnafb",
     },
     {
@@ -84,6 +149,8 @@ function App() {
       description:
         "Built and deployed a Flask-based task tracking application on AWS using EC2, DynamoDB, Nginx, and Linux to practice cloud deployment, infrastructure setup, and application hosting.",
       tags: ["Flask", "DynamoDB", "EC2", "Linux"],
+      icon: "task",
+      color: "#ef4444",
       link: "https://github.com/atnafb/taskTracker",
     },
   ];
@@ -162,7 +229,7 @@ function App() {
             infrastructure, including VPCs, subnet architecture, security groups, EC2
             instances, RDS databases, and CloudFormation deployments. Builds cloud-native
             and data-driven solutions using AWS, Python, SQL, and analytics to support
-            secure, scalable, and business-ficused applications.
+            secure, scalable, and business-focused applications.
           </p>
 
           <div
@@ -271,6 +338,22 @@ function App() {
                 justifyContent: "space-between",
               }}
             >
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "56px",
+                  height: "56px",
+                  borderRadius: "14px",
+                  backgroundColor: `${project.color}12`,
+                  border: `1px solid ${project.color}30`,
+                  marginBottom: "16px",
+                }}
+              >
+                <ProjectIcon type={project.icon} color={project.color} />
+              </div>
+
               <h3>{project.title}</h3>
               <p
                 style={{
