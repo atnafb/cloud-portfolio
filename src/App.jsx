@@ -351,8 +351,15 @@ function App() {
             maxWidth: "700px",
           }}
         >
-          <p>
+          <p style={{ marginBottom: "12px" }}>
             <strong>Email:</strong> ayalewatna@gmail.com
+          </p>
+
+          <p style={{ marginBottom: "12px" }}>
+            <strong>Website:</strong>{" "}
+            <a href="https://atnafuayalew.com" target="_blank" rel="noreferrer">
+              atnafuayalew.com
+            </a>
           </p>
 
           <p style={{ marginBottom: "12px" }}>
@@ -379,6 +386,20 @@ function App() {
           </p>
         </div>
       </section>
+
+      <footer
+        style={{
+          marginTop: "40px",
+          paddingTop: "20px",
+          borderTop: "1px solid #d1d5db",
+          color: "#4b5563",
+          fontSize: "14px",
+          textAlign: "center",
+        }}
+      >
+        © 2026 Atnafu Ayalew. Built with React, Amazon S3, CloudFront, Route 53,
+        and ACM.
+      </footer>
     </div>
   );
 }
