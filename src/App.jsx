@@ -1,3 +1,4 @@
+import profilePic from "./assets/profile.png";
 function App() {
   const projects = [
     {
@@ -42,7 +43,7 @@ function App() {
       style={{
         maxWidth: "1200px",
         margin: "0 auto",
-        padding: "60px 40px",
+        padding: "40px 40px 60px",
       }}
     >
       <nav
@@ -55,7 +56,23 @@ function App() {
           borderBottom: "1px solid #d1d5db",
         }}
       >
-        <h2 style={{ margin: 0 }}>Atnafu Ayalew</h2>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <img
+            src={profilePic}
+            alt="Atnafu Ayalew profile"
+            style={{
+              width: "90px",
+              height: "90px",
+              borderRadius: "50%",
+              objectFit: "cover",
+              objectPosition: "center top",
+              transform: "scale(1.12)",
+              transformOrigin: "center",
+              border: "3px solid #e5e7eb",
+            }}
+          />
+          <h2 style={{ margin: 0, fontSize: "24px" }}>Atnafu Ayalew</h2>
+        </div>
 
         <div style={{ display: "flex", gap: "20px" }}>
           <a href="#projects" style={{ textDecoration: "none", color: "#111827", fontWeight: "500" }}>
@@ -83,20 +100,19 @@ function App() {
         }}
       >
         <div>
-          <h1 style={{ fontSize: "56px", marginBottom: "10px" }}>
-            Atnafu Ayalew
+          <h1 style={{ fontSize: "45px", 
+            lineHeight: "1.1",
+            maxWidth: "700px",
+            marginBottom: "20px" }}>
+            Cloud Engineer | Data Engineer
           </h1>
 
-          <h2 style={{ color: "#2563eb", marginBottom: "20px" }}>
-            Cloud Engineer | Data Engineer
-          </h2>
-
-          <p style={{ fontSize: "18px", lineHeight: "1.6", maxWidth: "800px" }}>
-            AWS re/Start graduate and Data Analytics Certificate holder from UNC
-            Charlotte with hands-on experience in cloud architecture, database
-            design, data engineering, and analytics. Passionate about building
-            scalable cloud solutions on AWS and transforming data into meaningful
-            business insights.
+          <p style={{ fontSize: "18px", lineHeight: "1.8", maxWidth: "800px" }}>
+            Builds scalable AWS cloud solutions and data-driven applications using
+            services such as Amazon S3, CloudFront, Route 53, RDS, Lambda, and
+            CloudFormation. Applies hands-on experience in cloud architecture,
+            database design, Python, SQL, and analytics to support reliable
+            infrastructure and meaningful business insights.
           </p>
 
           <div style={{ marginTop: "25px", display: "flex", gap: "16px" }}>
