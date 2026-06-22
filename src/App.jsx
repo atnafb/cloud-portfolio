@@ -1,10 +1,60 @@
 import profilePic from "./assets/profile.png";
+const LinkedInIcon = ({ size = 18, color = "currentColor" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const GitHubIcon = ({ size = 18, color = "currentColor" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-8 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22" />
+  </svg>
+);
+
+const LinkArrowIcon = ({ size = 16, color = "currentColor" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M7 17L17 7" />
+    <path d="M7 7h10v10" />
+  </svg>
+);
 function App() {
   const projects = [
     {
       title: "CareSync – AWS Healthcare Platform",
       description:
-        "Cloud-native healthcare app using AWS VPC, RDS MySQL, Cognito, API Gateway, Lambda, and CloudFormation.",
+        "Designed an AWS-based healthcare note-taking platform using VPC, Security Group, RDS MySQL, DB Subnet Group, and CloudFormation to support secure cloud-native application deployment.",
       tags: ["AWS", "RDS", "Lambda", "Cognito"],
       link: "https://github.com/atnafb/atnafb",
     },
@@ -18,21 +68,21 @@ function App() {
     {
       title: "Housing Market Analysis",
       description:
-        "Data analytics project using Python, SQL, Pandas, and visualizations to analyze housing market trends.",
+        "Developed a Python and SQL analytics project to analyze housing market trends, pricing, and inventory patterns using data cleaning, transformation, and visualization workflows.",
       tags: ["Python", "SQL", "Pandas", "Analytics"],
       link: "https://github.com/atnafb/NC_housing_market",
     },
     {
       title: "ETL Data Pipeline",
       description:
-        "Data engineering pipeline concept using Amazon S3, AWS Glue, Amazon Redshift, and QuickSight.",
+        "DDesigned a cloud ETL pipeline concept using Amazon S3, AWS Glue, Redshift, and QuickSight to transform raw data into structured datasets for reporting and analytics. [in progress]",
       tags: ["S3", "Glue", "Redshift", "QuickSight"],
       link: "https://github.com/atnafb",
     },
     {
       title: "Task Tracker Application",
       description:
-        "Task management app built with Flask, DynamoDB, EC2, Nginx, and Linux server configuration.",
+        "Built and deployed a Flask-based task tracking application on AWS using EC2, DynamoDB, Nginx, and Linux to practice cloud deployment, infrastructure setup, and application hosting.",
       tags: ["Flask", "DynamoDB", "EC2", "Linux"],
       link: "https://github.com/atnafb/taskTracker",
     },
@@ -108,19 +158,71 @@ function App() {
           </h1>
 
           <p style={{ fontSize: "18px", lineHeight: "1.8", maxWidth: "800px" }}>
-            Builds scalable AWS cloud solutions and data-driven applications using
-            services such as Amazon S3, CloudFront, Route 53, RDS, Lambda, and
-            CloudFormation. Applies hands-on experience in cloud architecture,
-            database design, Python, SQL, and analytics to support reliable
-            infrastructure and meaningful business insights.
+            Cloud Engineer and Data Engineer with hands-on experience designing AWS
+            infrastructure, including VPCs, subnet architecture, security groups, EC2
+            instances, RDS databases, and CloudFormation deployments. Builds cloud-native
+            and data-driven solutions using AWS, Python, SQL, and analytics to support
+            secure, scalable, and business-ficused applications.
           </p>
 
-          <div style={{ marginTop: "25px", display: "flex", gap: "16px" }}>
+          <div
+            style={{
+              marginTop: "25px",
+              display: "flex",
+              gap: "16px",
+              flexWrap: "wrap",
+              alignItems: "center",
+            }}
+          >
             <a href="#projects">
               <button>View Projects</button>
             </a>
 
             <button>Download Resume</button>
+
+            <a
+              href="https://www.linkedin.com/in/atnafuayalew/"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "10px 16px",
+                borderRadius: "10px",
+                border: "1px solid #dbeafe",
+                backgroundColor: "white",
+                color: "#111827",
+                textDecoration: "none",
+                fontWeight: "600",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
+              }}
+            >
+              <LinkedInIcon size={18} color="#2563eb" />
+              LinkedIn
+            </a>
+
+            <a
+              href="https://github.com/atnafb"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "10px 16px",
+                borderRadius: "10px",
+                border: "1px solid #e5e7eb",
+                backgroundColor: "white",
+                color: "#111827",
+                textDecoration: "none",
+                fontWeight: "600",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
+              }}
+            >
+              <GitHubIcon size={18} />
+              GitHub
+            </a>
           </div>
         </div>
 
@@ -137,7 +239,7 @@ function App() {
           </h3>
 
           <ul style={{ lineHeight: "1.8", paddingLeft: "20px" }}>
-            <li>AWS Cloud Engineering</li>
+            <li>AWS Infrastructure Design (VPC, Subnets, Security Groups)</li>
             <li>Cloud Architecture & Migration</li>
             <li>Data Engineering & ETL</li>
             <li>Python, SQL, and Analytics</li>
@@ -205,20 +307,53 @@ function App() {
                 ))}
               </div>
 
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
+              <div
                 style={{
                   marginTop: "20px",
-                  display: "inline-block",
-                  textDecoration: "none",
-                  color: "#2563eb",
-                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "12px",
                 }}
               >
-                View Project →
-              </a>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    textDecoration: "none",
+                    color: "#2563eb",
+                    fontWeight: "600",
+                  }}
+                >
+                  View Project
+                  <LinkArrowIcon size={16} color="#2563eb" />
+                </a>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${project.title} GitHub repository`}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "999px",
+                    border: "1px solid #e5e7eb",
+                    color: "#111827",
+                    textDecoration: "none",
+                    backgroundColor: "#f9fafb",
+                  }}
+                >
+                  <GitHubIcon size={18} />
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -371,28 +506,61 @@ function App() {
             <strong>Email:</strong> ayalewatna@gmail.com
           </p>
 
-          <p style={{ marginBottom: "12px" }}>
-            <strong>Website:</strong>{" "}
-            <a href="https://atnafuayalew.com" target="_blank" rel="noreferrer">
-              atnafuayalew.com
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "12px",
+              marginBottom: "16px",
+            }}
+          >
+            <a
+              href="https://github.com/atnafb"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "10px 14px",
+                borderRadius: "10px",
+                border: "1px solid #e5e7eb",
+                textDecoration: "none",
+                color: "#111827",
+                fontWeight: "600",
+                backgroundColor: "#f9fafb",
+              }}
+            >
+              <GitHubIcon size={18} />
+              GitHub
             </a>
-          </p>
 
-          <p style={{ marginBottom: "12px" }}>
-            <strong>GitHub:</strong>{" "}
-            <a href="https://github.com/atnafb" target="_blank" rel="noreferrer">
-              github.com/atnafb
-            </a>
-          </p>
-
-          <p style={{ marginBottom: "12px" }}>
-            <strong>LinkedIn:</strong>{" "}
             <a
               href="https://www.linkedin.com/in/atnafuayalew/"
               target="_blank"
               rel="noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "10px 14px",
+                borderRadius: "10px",
+                border: "1px solid #dbeafe",
+                textDecoration: "none",
+                color: "#111827",
+                fontWeight: "600",
+                backgroundColor: "#f8fbff",
+              }}
             >
-              linkedin.com/in/atnafuayalew
+              <LinkedInIcon size={18} color="#2563eb" />
+              LinkedIn
+            </a>
+          </div>
+
+          <p style={{ marginBottom: "12px" }}>
+            <strong>Website:</strong>{" "}
+            <a href="https://atnafuayalew.com" target="_blank" rel="noreferrer">
+              atnafuayalew.com
             </a>
           </p>
 
