@@ -1,4 +1,5 @@
 import profilePic from "./assets/profile.png";
+import Chatbot from "./components/Chatbot";
 const LinkedInIcon = ({ size = 18, color = "currentColor" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -667,6 +668,8 @@ function App() {
         © 2026 Atnafu Ayalew. Built with React, Amazon S3, CloudFront, Route 53,
         and ACM.
       </footer>
+
+      <Chatbot />
     </div>
   );
 }

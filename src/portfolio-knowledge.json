@@ -1,0 +1,247 @@
+{
+  "profile": {
+    "name": "Atnafu Ayalew",
+    "headline": "Cloud Engineer | Data Engineer",
+    "location": "Charlotte, NC",
+    "website": "https://atnafuayalew.com",
+    "summary": "Atnafu Ayalew is a Cloud Engineer and Data Engineer with hands-on experience designing AWS infrastructure, including VPCs, subnet architecture, security groups, EC2 instances, RDS databases, and CloudFormation deployments. He builds cloud-native and data-driven solutions using AWS, Python, SQL, and analytics to support secure, scalable, and business-focused applications."
+  },
+  "target_roles": [
+    "Cloud Support Engineer",
+    "Cloud Engineer",
+    "Junior Cloud Engineer",
+    "Data Engineer",
+    "Entry-level DevOps or Infrastructure Support roles"
+  ],
+  "skills": {
+    "aws_cloud": [
+      "Amazon S3",
+      "CloudFront",
+      "Route 53",
+      "ACM",
+      "VPC",
+      "Subnets",
+      "Security Groups",
+      "EC2",
+      "RDS MySQL",
+      "Lambda",
+      "API Gateway",
+      "Cognito",
+      "CloudFormation",
+      "CloudWatch",
+      "IAM"
+    ],
+    "data_engineering": [
+      "Python",
+      "SQL",
+      "Pandas",
+      "ETL pipelines",
+      "Data cleaning",
+      "Data transformation",
+      "Data visualization",
+      "Redshift",
+      "AWS Glue",
+      "QuickSight"
+    ],
+    "tools": [
+      "Linux",
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Nginx",
+      "Gunicorn",
+      "AWS CLI"
+    ]
+  },
+  "projects": [
+    {
+      "name": "Cloud Portfolio Website",
+      "type": "AWS Static Website Deployment",
+      "summary": "Built and deployed a personal cloud portfolio website using React, Amazon S3, CloudFront, Route 53, ACM, and AWS CLI.",
+      "details": [
+        "Developed the frontend using React and Vite",
+        "Built production files using npm run build",
+        "Hosted static website files in Amazon S3",
+        "Configured CloudFront for secure global content delivery",
+        "Registered and connected a custom domain using Route 53",
+        "Configured HTTPS using AWS Certificate Manager",
+        "Used AWS CLI to sync new builds to S3 and invalidate CloudFront cache"
+      ],
+      "aws_services": [
+        "S3",
+        "CloudFront",
+        "Route 53",
+        "ACM",
+        "IAM",
+        "AWS CLI"
+      ],
+      "business_value": "Demonstrates practical cloud deployment, DNS, CDN, HTTPS, and static website hosting skills."
+    },
+    {
+      "name": "CareSync",
+      "type": "AWS Healthcare Cloud Application",
+      "summary": "Designed an AWS-based healthcare note-taking platform to support caregiver workflows using cloud-native architecture.",
+      "details": [
+        "Designed VPC architecture with public and private subnets",
+        "Configured route tables and security groups",
+        "Created RDS MySQL database in private subnets",
+        "Designed DB subnet group and secure database connectivity",
+        "Configured Lambda-to-RDS access through security group rules",
+        "Used CloudFormation to define infrastructure components",
+        "Supported architecture planning for Cognito, API Gateway, Lambda, and RDS integration"
+      ],
+      "aws_services": [
+        "VPC",
+        "Subnets",
+        "Security Groups",
+        "EC2",
+        "RDS MySQL",
+        "Lambda",
+        "API Gateway",
+        "Cognito",
+        "CloudFormation",
+        "CloudWatch"
+      ],
+      "business_value": "Shows ability to design secure AWS infrastructure for a real-world healthcare workflow application."
+    },
+    {
+      "name": "Task Tracker Application",
+      "type": "Cloud Application Deployment",
+      "summary": "Built and deployed a task tracking application using Flask, DynamoDB, EC2, Linux, Nginx, and Gunicorn.",
+      "details": [
+        "Deployed a Flask application on an EC2 instance",
+        "Configured Linux server environment",
+        "Used DynamoDB for application data storage",
+        "Configured Nginx as a reverse proxy",
+        "Used Gunicorn as the application server",
+        "Troubleshot permissions, connectivity, and deployment issues"
+      ],
+      "aws_services": [
+        "EC2",
+        "DynamoDB",
+        "IAM",
+        "Linux"
+      ],
+      "business_value": "Demonstrates hands-on cloud application hosting, Linux administration, and troubleshooting experience."
+    },
+    {
+      "name": "Housing Market Analysis",
+      "type": "Data Analytics Project",
+      "summary": "Developed a Python and SQL analytics project to study housing market trends, pricing changes, and inventory patterns.",
+      "details": [
+        "Used Python, SQL, and Pandas for data analysis",
+        "Cleaned and transformed housing market datasets",
+        "Analyzed market trends across selected U.S. cities and states",
+        "Built visualizations to communicate pricing and inventory patterns"
+      ],
+      "technologies": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "Matplotlib",
+        "Data visualization"
+      ],
+      "business_value": "Shows ability to transform raw data into insights that support market understanding and decision-making."
+    },
+    {
+      "name": "ETL Data Pipeline",
+      "type": "Cloud Data Engineering Concept",
+      "summary": "Designed a cloud ETL pipeline concept using Amazon S3, AWS Glue, Redshift, and QuickSight.",
+      "details": [
+        "Designed a pipeline for collecting raw data in Amazon S3",
+        "Planned ETL processing using AWS Glue",
+        "Planned analytics storage using Amazon Redshift",
+        "Planned reporting and dashboards using QuickSight"
+      ],
+      "aws_services": [
+        "S3",
+        "AWS Glue",
+        "Redshift",
+        "QuickSight"
+      ],
+      "status": "In progress",
+      "business_value": "Demonstrates understanding of modern cloud data pipeline architecture."
+    }
+  ],
+  "education_and_training": [
+    {
+      "program": "AWS re/Start Program",
+      "provider": "Per Scholas",
+      "focus": "AWS cloud fundamentals, Linux, networking, security, cloud architecture, and troubleshooting",
+      "status": "In progress / expected completion July 2026"
+    },
+    {
+      "program": "Data Analytics Certificate",
+      "provider": "UNC Charlotte",
+      "focus": "Python, SQL, data analysis, visualization, and analytics workflows",
+      "status": "Completed"
+    },
+    {
+      "program": "Bachelor of Science in Computer Science",
+      "provider": "St. Mary’s University",
+      "status": "Completed"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "status": "Preparing"
+    },
+    {
+      "name": "AWS re/Start Graduate",
+      "status": "Expected July 2026"
+    }
+  ],
+  "contact": {
+    "website": "https://atnafuayalew.com",
+    "github": "https://github.com/atnafb",
+    "linkedin": "https://www.linkedin.com/in/atnafuayalew/",
+    "email": "ayalewatna@gmail.com"
+  },
+  "faq": [
+    {
+      "question": "What AWS experience does Atnafu have?",
+      "answer": "Atnafu has hands-on experience with AWS infrastructure and application services including VPC, subnets, security groups, EC2, RDS MySQL, Lambda, API Gateway, Cognito, S3, CloudFront, Route 53, ACM, CloudFormation, IAM, CloudWatch, and AWS CLI."
+    },
+    {
+      "question": "What is Atnafu’s strongest cloud project?",
+      "answer": "One of Atnafu’s strongest cloud projects is his AWS-hosted portfolio website, which uses React, S3, CloudFront, Route 53, ACM, IAM, and AWS CLI. CareSync is also a strong AWS architecture project involving VPC design, RDS MySQL, Lambda, API Gateway, Cognito, and CloudFormation."
+    },
+    {
+      "question": "What is CareSync?",
+      "answer": "CareSync is a cloud-native healthcare note-taking application designed to support caregiver workflows. Atnafu contributed to the AWS architecture and database design, including VPC design, subnets, security groups, RDS MySQL, DB subnet groups, Lambda connectivity, and CloudFormation planning."
+    },
+    {
+      "question": "Does Atnafu have data engineering experience?",
+      "answer": "Yes. Atnafu has experience with Python, SQL, Pandas, ETL concepts, data cleaning, transformation, visualization, and cloud data pipeline design using services such as S3, AWS Glue, Redshift, and QuickSight."
+    },
+    {
+      "question": "What roles is Atnafu targeting?",
+      "answer": "Atnafu is targeting Cloud Support Engineer, Cloud Engineer, Junior Cloud Engineer, Data Engineer, and entry-level infrastructure or DevOps support roles."
+    },
+    {
+      "question": "How can I contact Atnafu?",
+      "answer": "Atnafu can be contacted through his portfolio website at https://atnafuayalew.com, GitHub at https://github.com/atnafb, LinkedIn at https://www.linkedin.com/in/atnafuayalew/, or by email at ayalewatna@gmail.com."
+    }
+  ],
+  "bot_rules": {
+    "role": "You are an AI portfolio assistant for Atnafu Ayalew.",
+    "tone": "Professional, concise, recruiter-friendly, and confident.",
+    "scope": [
+      "Atnafu’s AWS experience",
+      "Atnafu’s cloud projects",
+      "Atnafu’s data engineering experience",
+      "Atnafu’s technical skills",
+      "Atnafu’s education and training",
+      "Atnafu’s target roles",
+      "Atnafu’s contact information"
+    ],
+    "do_not_answer": [
+      "Do not answer unrelated general questions.",
+      "Do not invent experience, certifications, employers, or project details.",
+      "Do not claim Atnafu has completed a certification unless the knowledge source says it is completed.",
+      "Do not provide personal information outside the contact information listed."
+    ],
+    "fallback_response": "I can answer questions about Atnafu’s cloud projects, AWS experience, data engineering background, technical skills, training, and contact information."
+  }
+}
