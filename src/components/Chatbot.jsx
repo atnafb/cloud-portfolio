@@ -11,24 +11,8 @@ const SUGGESTED_QUESTIONS = [
 ];
 
 const CHATBOT_API_URL = import.meta.env.VITE_CHATBOT_API_URL;
+console.log("CHATBOT_API_URL:", CHATBOT_API_URL);
 
-function ChatIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="22"
-      height="22"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
-    </svg>
-  );
-}
 
 function CloseIcon() {
   return (
@@ -207,20 +191,30 @@ export default function Chatbot() {
 
   return (
     <>
-      <button
-        className="chatbot-launcher"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label={isOpen ? "Close portfolio assistant" : "Open portfolio assistant"}
-      >
-        {isOpen ? <CloseIcon /> : <ChatIcon />}
-      </button>
+      {!isOpen && (
+        <button
+          className="chatbot-hint"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open AI portfolio assistant"
+          title="Ask Atnafu AI Assistant"
+        >
+          <div className="chatbot-hint-title">Ask Atnafu</div>
+          <div className="chatbot-hint-status">
+            <span className="status-dot"></span>
+            <span>Online</span>
+          </div>
+        </button>
+      )}
 
       {isOpen && (
         <div className="chatbot-panel">
           <div className="chatbot-header">
             <div>
               <p className="chatbot-eyebrow">AI Portfolio Assistant</p>
-              <h3>Ask about Atnafu's work</h3>
+              <div className="chatbot-status">
+              <span className="status-dot"></span>
+              <span>AI Assistant • Online</span>
+              </div>
             </div>
             <button
               className="chatbot-close"
@@ -234,6 +228,10 @@ export default function Chatbot() {
           <div className="chatbot-messages">
             {messages.map((message) => (
               <div key={message.id} className={`chatbot-message ${message.sender}`}>
+                {message.sender === "bot" && (
+                  <div className="bot-avatar">AI</div>
+                )}
+
                 <div className="chatbot-bubble">{message.text}</div>
               </div>
             ))}

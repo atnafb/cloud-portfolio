@@ -33,6 +33,21 @@ const GitHubIcon = ({ size = 18, color = "currentColor" }) => (
     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-8 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22" />
   </svg>
 );
+const EmailIcon = ({ size = 18, color = "currentColor" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m3 7 9 6 9-6" />
+  </svg>
+);
+
+const WebsiteIcon = ({ size = 18, color = "currentColor" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M2 12h20" />
+    <path d="M12 2a15.3 15.3 0 0 1 0 20" />
+    <path d="M12 2a15.3 15.3 0 0 0 0 20" />
+  </svg>
+);
 
 const LinkArrowIcon = ({ size = 16, color = "currentColor" }) => (
   <svg
@@ -50,6 +65,7 @@ const LinkArrowIcon = ({ size = 16, color = "currentColor" }) => (
     <path d="M7 7h10v10" />
   </svg>
 );
+
 
 const ProjectIcon = ({ type, color }) => {
   const commonProps = {
@@ -100,6 +116,60 @@ const ProjectIcon = ({ type, color }) => {
         <rect x="5" y="4" width="14" height="17" rx="2" />
         <path d="M9 9l1.5 1.5L14 7" />
         <path d="M9 15l1.5 1.5L14 13" />
+      </svg>
+    ),
+  };
+
+  return icons[type];
+};
+
+const CertificationIcon = ({ type, color }) => {
+  const commonProps = {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 30,
+    height: 30,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: color,
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+  };
+
+  const icons = {
+    aws: (
+      <svg {...commonProps}>
+        <path d="M4 17c2.4 1.8 5.1 2.7 8 2.7s5.6-.9 8-2.7" />
+        <path d="M7 7h10" />
+        <path d="M7 12h10" />
+        <path d="M7 7v5" />
+        <path d="M17 7v5" />
+        <path d="M10 12v4" />
+        <path d="M14 12v4" />
+      </svg>
+    ),
+    certificate: (
+      <svg {...commonProps}>
+        <rect x="4" y="3" width="16" height="18" rx="2" />
+        <path d="M8 8h8" />
+        <path d="M8 12h5" />
+        <path d="M15 16l1.5 1.5L20 14" />
+      </svg>
+    ),
+    analytics: (
+      <svg {...commonProps}>
+        <path d="M4 19V5" />
+        <path d="M4 19h16" />
+        <path d="M8 16v-5" />
+        <path d="M12 16V8" />
+        <path d="M16 16v-7" />
+      </svg>
+    ),
+    degree: (
+      <svg {...commonProps}>
+        <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+        <path d="M6 12v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4" />
+        <path d="M22 10v6" />
       </svg>
     ),
   };
@@ -243,10 +313,40 @@ function App() {
             }}
           >
             <a href="#projects">
-              <button>View Projects</button>
+              <button
+                style={{
+                  padding: "10px 20px",
+                  borderRadius: "6px",            
+                  backgroundColor: "#2563eb",            
+                  color: "white",            
+                  border: "none",            
+                  fontWeight: "600",            
+                  fontSize: "16px",            
+                  cursor: "pointer",            
+                  minWidth: "185px",            
+                }}
+              >
+                View Projects</button>
             </a>
 
-            <button>Download Resume</button>
+            <a
+              href="/resume/Atnafu_Ayalew_Cloud_Engineer_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "10px 20px",
+                borderRadius: "6px",
+                backgroundColor: "#2563eb",
+                color: "white",
+                textDecoration: "none",
+                fontWeight: "600",
+              }}
+            >
+              Download Resume
+            </a>
 
             <a
               href="https://www.linkedin.com/in/atnafuayalew/"
@@ -534,9 +634,24 @@ function App() {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
             }}
           >
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "52px",
+                height: "52px",
+                borderRadius: "14px",
+                backgroundColor: "#f9731612",
+                border: "1px solid #f9731630",
+                marginBottom: "16px",
+              }}
+            >
+              <CertificationIcon type="aws" color="#f97316" />
+            </div>
             <h3 style={{ marginBottom: "12px" }}>AWS re/Start Graduate</h3>
             <p style={{ color: "#4b5563", lineHeight: "1.7" }}>
-              Expected July 2026
+              Per Scholas July 2026
             </p>
           </div>
 
@@ -548,11 +663,26 @@ function App() {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
             }}
           >
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "52px",
+                height: "52px",
+                borderRadius: "14px",
+                backgroundColor: "#2563eb12",
+                border: "1px solid #2563eb30",
+                marginBottom: "16px",
+              }}
+            >
+              <CertificationIcon type="certificate" color="#2563eb" />
+            </div>
             <h3 style={{ marginBottom: "12px" }}>
               AWS Certified Cloud Practitioner
             </h3>
             <p style={{ color: "#4b5563", lineHeight: "1.7" }}>
-              In Progress
+              Completed 2026
             </p>
           </div>
 
@@ -564,11 +694,57 @@ function App() {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
             }}
           >
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "52px",
+                height: "52px",
+                borderRadius: "14px",
+                backgroundColor: "#16a34a12",
+                border: "1px solid #16a34a30",
+                marginBottom: "16px",
+              }}
+            >
+              <CertificationIcon type="analytics" color="#16a34a" />
+            </div>
             <h3 style={{ marginBottom: "12px" }}>
               UNC Charlotte Data Analytics Certificate
             </h3>
             <p style={{ color: "#4b5563", lineHeight: "1.7" }}>
               Completed 2025
+            </p>
+          </div>
+
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "24px",
+              borderRadius: "12px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+            }}
+          >
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "52px",
+                height: "52px",
+                borderRadius: "14px",
+                backgroundColor: "#7c3aed12",
+                border: "1px solid #7c3aed30",
+                marginBottom: "16px",
+              }}
+            >
+              <CertificationIcon type="degree" color="#7c3aed" />
+            </div>
+            <h3 style={{ marginBottom: "12px" }}>
+              Bachelor of Computer Science
+            </h3>
+            <p style={{ color: "#4b5563", lineHeight: "1.7" }}>
+              Saint Mary's University, 2022
             </p>
           </div>
         </div>
@@ -584,11 +760,26 @@ function App() {
             borderRadius: "12px",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
             maxWidth: "700px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
           }}
         >
-          <p style={{ marginBottom: "12px" }}>
-            <strong>Email:</strong> ayalewatna@gmail.com
-          </p>
+          <a
+            href="mailto:ayalewatna@gmail.com"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              marginBottom: "12px",
+              color: "#111827",
+              textDecoration: "none",
+              fontWeight: "600",
+            }}
+          >
+            <EmailIcon size={18} color="#2563eb" /> 
+            ayalewatna@gmail.com
+          </a>
 
           <div
             style={{
@@ -641,12 +832,23 @@ function App() {
             </a>
           </div>
 
-          <p style={{ marginBottom: "12px" }}>
-            <strong>Website:</strong>{" "}
-            <a href="https://atnafuayalew.com" target="_blank" rel="noreferrer">
-              atnafuayalew.com
-            </a>
-          </p>
+          <a
+            href="https://atnafuayalew.com"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              marginBottom: "12px",
+              ccolor: "#2563eb",
+              textDecoration: "none",
+              fontWeight: "600",
+            }}
+          >
+            <WebsiteIcon size={18} color="#2563eb" />
+            atnafuayalew.com
+          </a>
 
           <p>
             Open to opportunities in cloud engineering, cloud support, and data
@@ -665,7 +867,7 @@ function App() {
           textAlign: "center",
         }}
       >
-        © 2026 Atnafu Ayalew. Built with React, Amazon S3, CloudFront, Route 53,
+        © 2026 Atnafu Ayalew. Built with React, Amazon S3, CloudFront, Route 53, AWS Lambda, Amazon Bedrock
         and ACM.
       </footer>
 
