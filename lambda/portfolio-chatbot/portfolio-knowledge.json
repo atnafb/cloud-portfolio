@@ -1,4 +1,7 @@
 {
+  "schema_version": "2.0",
+  "last_verified": "2026-07-21",
+  "source_note": "Facts are aligned with the public portfolio. Project status words must be preserved in answers.",
   "profile": {
     "name": "Atnafu Ayalew",
     "headline": "Cloud Engineer | Data Engineer",
@@ -29,7 +32,9 @@
       "Cognito",
       "CloudFormation",
       "CloudWatch",
-      "IAM"
+      "IAM",
+      "AWS DMS",
+      "Aurora"
     ],
     "data_engineering": [
       "Python",
@@ -41,7 +46,9 @@
       "Data visualization",
       "Redshift",
       "AWS Glue",
-      "QuickSight"
+      "QuickSight",
+      "SQLAlchemy",
+      "PySpark"
     ],
     "tools": [
       "Linux",
@@ -50,7 +57,10 @@
       "VS Code",
       "Nginx",
       "Gunicorn",
-      "AWS CLI"
+      "AWS CLI",
+      "JavaScript",
+      "Tableau",
+      "Power BI"
     ]
   },
   "projects": [
@@ -125,6 +135,24 @@
       "business_value": "Demonstrates hands-on cloud application hosting, Linux administration, and troubleshooting experience."
     },
     {
+      "name": "Database Migration to AWS",
+      "type": "AWS Database Migration Project",
+      "summary": "Completed a database migration project focused on moving relational data to Amazon RDS with AWS DMS and monitoring the migration with CloudWatch.",
+      "details": [
+        "Planned the source-to-target relational database migration workflow",
+        "Used AWS Database Migration Service to move relational data",
+        "Used Amazon RDS as the managed target database",
+        "Used CloudWatch to monitor migration activity"
+      ],
+      "aws_services": [
+        "AWS DMS",
+        "Amazon RDS",
+        "CloudWatch"
+      ],
+      "status": "Completed portfolio project",
+      "business_value": "Demonstrates practical knowledge of managed relational databases, cloud migration workflows, and operational monitoring."
+    },
+    {
       "name": "Housing Market Analysis",
       "type": "Data Analytics Project",
       "summary": "Developed a Python and SQL analytics project to study housing market trends, pricing changes, and inventory patterns.",
@@ -168,7 +196,7 @@
       "program": "AWS re/Start Program",
       "provider": "Per Scholas",
       "focus": "AWS cloud fundamentals, Linux, networking, security, cloud architecture, and troubleshooting",
-      "status": "In progress / expected completion July 2026"
+      "status": "Completed July 2026"
     },
     {
       "program": "Data Analytics Certificate",
@@ -185,11 +213,11 @@
   "certifications": [
     {
       "name": "AWS Certified Cloud Practitioner",
-      "status": "Preparing"
+      "status": "Completed 2026"
     },
     {
       "name": "AWS re/Start Graduate",
-      "status": "Expected July 2026"
+      "status": "Completed July 2026"
     }
   ],
   "contact": {
@@ -220,10 +248,46 @@
       "answer": "Atnafu is targeting Cloud Support Engineer, Cloud Engineer, Junior Cloud Engineer, Data Engineer, and entry-level infrastructure or DevOps support roles."
     },
     {
+      "question": "What certifications and training has Atnafu completed?",
+      "answer": "Atnafu completed the AWS Certified Cloud Practitioner certification in 2026, graduated from the Per Scholas AWS re/Start program in July 2026, and completed the UNC Charlotte Data Analytics Certificate in 2025. He also holds a bachelor’s degree in computer science."
+    },
+    {
+      "question": "Does Atnafu have database migration experience?",
+      "answer": "Yes. Atnafu completed a portfolio project focused on migrating relational data to Amazon RDS with AWS Database Migration Service and monitoring the migration with CloudWatch. This is project experience, not a claim of production employment experience."
+    },
+    {
+      "question": "What evidence shows Atnafu can troubleshoot cloud systems?",
+      "answer": "In the Task Tracker project, Atnafu deployed a Flask application to EC2, configured Linux, Nginx, and Gunicorn, connected the application to DynamoDB, and troubleshot permissions, connectivity, and deployment issues. His AWS re/Start training also covered cloud and Linux troubleshooting."
+    },
+    {
+      "question": "Why is Atnafu a fit for a junior cloud or cloud support role?",
+      "answer": "Atnafu combines hands-on AWS portfolio work with AWS re/Start training and the AWS Certified Cloud Practitioner credential. His projects show practical exposure to networking, compute, storage, databases, IAM, monitoring, infrastructure as code, Linux deployment, and troubleshooting."
+    },
+    {
+      "question": "What programming and analytics tools does Atnafu use?",
+      "answer": "Atnafu uses Python, SQL, JavaScript, Pandas, SQLAlchemy, PySpark, Tableau, Power BI, and AWS analytics services including Glue, Redshift, and QuickSight. His documented projects demonstrate Python, SQL, Pandas, data cleaning, transformation, and visualization."
+    },
+    {
       "question": "How can I contact Atnafu?",
       "answer": "Atnafu can be contacted through his portfolio website at https://atnafuayalew.com, GitHub at https://github.com/atnafb, LinkedIn at https://www.linkedin.com/in/atnafuayalew/, or by email at ayalewatna@gmail.com."
     }
   ],
+  "answer_guidance": {
+    "default_length": "2 to 5 sentences",
+    "structure": [
+      "Give the direct answer first",
+      "Support it with the most relevant documented project or training evidence",
+      "State limitations or project status when they matter"
+    ],
+    "status_language": {
+      "built_and_deployed": "May be described as hands-on implementation and deployment experience",
+      "completed_portfolio_project": "May be described as completed project experience, but not employment or production experience",
+      "designed": "Describe as architecture or design experience; do not imply the full system was deployed",
+      "in_progress": "Describe as current learning or work in progress; do not call it completed"
+    },
+    "comparison_rule": "When asked for the strongest or most relevant project, choose based on the requested role and explain the reason instead of making an unsupported absolute claim.",
+    "unknown_fact_rule": "Say that the portfolio does not specify the fact. Do not guess."
+  },
   "bot_rules": {
     "role": "You are an AI portfolio assistant for Atnafu Ayalew.",
     "tone": "Professional, concise, recruiter-friendly, and confident.",
@@ -233,13 +297,15 @@
       "Atnafu’s data engineering experience",
       "Atnafu’s technical skills",
       "Atnafu’s education and training",
+      "Atnafu’s certifications",
       "Atnafu’s target roles",
       "Atnafu’s contact information"
     ],
     "do_not_answer": [
-      "Do not answer unrelated general questions.",
+      "Only answer general technical questions when they clarify Atnafu’s documented projects or skills.",
       "Do not invent experience, certifications, employers, or project details.",
       "Do not claim Atnafu has completed a certification unless the knowledge source says it is completed.",
+      "Do not present portfolio projects as paid employment or production experience.",
       "Do not provide personal information outside the contact information listed."
     ],
     "fallback_response": "I can answer questions about Atnafu’s cloud projects, AWS experience, data engineering background, technical skills, training, and contact information."

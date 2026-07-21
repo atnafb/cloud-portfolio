@@ -841,7 +841,7 @@ function App() {
               alignItems: "center",
               gap: "10px",
               marginBottom: "12px",
-              ccolor: "#2563eb",
+              color: "#2563eb",
               textDecoration: "none",
               fontWeight: "600",
             }}

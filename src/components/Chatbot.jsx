@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./Chatbot.css";
 import knowledge from "../portfolio-knowledge.json";
 
@@ -11,8 +11,6 @@ const SUGGESTED_QUESTIONS = [
 ];
 
 const CHATBOT_API_URL = import.meta.env.VITE_CHATBOT_API_URL;
-console.log("CHATBOT_API_URL:", CHATBOT_API_URL);
-
 
 function CloseIcon() {
   return (
@@ -50,6 +48,10 @@ function SendIcon() {
       <path d="M22 2 15 22l-4-9-9-4Z" />
     </svg>
   );
+}
+
+function getMessageTime() {
+  return "Just now";
 }
 
 function normalize(text = "") {
@@ -95,6 +97,40 @@ function getMockResponse(question, data) {
   ) {
     const dataSkills = data.skills?.data_engineering?.join(", ");
     return `Yes — Atnafu has data engineering experience with ${dataSkills}. His work includes housing market analytics and an ETL pipeline design using S3, Glue, Redshift, and QuickSight.`;
+  }
+
+  if (q.includes("migration") || q.includes("dms")) {
+    const project = data.projects?.find((item) =>
+      item.name.toLowerCase().includes("migration")
+    );
+    if (project) {
+      return `${project.summary} ${project.business_value}`;
+    }
+  }
+
+  if (
+    q.includes("certification") ||
+    q.includes("certified") ||
+    q.includes("training") ||
+    q.includes("education") ||
+    q.includes("degree")
+  ) {
+    const certifications = data.certifications
+      ?.map((item) => `${item.name} (${item.status})`)
+      .join(", ");
+    const education = data.education_and_training
+      ?.map((item) => `${item.program} at ${item.provider}`)
+      .join(", ");
+    return `Atnafu's credentials include ${certifications}. His education and training include ${education}.`;
+  }
+
+  if (
+    q.includes("role") ||
+    q.includes("job") ||
+    q.includes("position") ||
+    q.includes("good fit")
+  ) {
+    return `Atnafu is targeting ${data.target_roles?.join(", ")}. His portfolio demonstrates AWS infrastructure, Linux deployment, data engineering, monitoring, and troubleshooting experience.`;
   }
 
   if (q.includes("project") || q.includes("portfolio")) {
@@ -151,8 +187,16 @@ export default function Chatbot() {
       id: 1,
       sender: "bot",
       text: "Hi — I’m Atnafu’s AI portfolio assistant. I can answer questions about his AWS experience, cloud projects, data engineering background, technical skills, and how to contact him.",
+      time: getMessageTime(),
     },
   ]);
+
+  const messagesEndRef = useRef(null);
+  const nextMessageIdRef = useRef(2);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, isTyping]);
 
   const quickQuestions = useMemo(() => SUGGESTED_QUESTIONS, []);
 
@@ -161,9 +205,10 @@ export default function Chatbot() {
     if (!trimmed) return;
 
     const userMessage = {
-      id: Date.now(),
+      id: nextMessageIdRef.current++,
       sender: "user",
       text: trimmed,
+      time: getMessageTime(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -171,16 +216,20 @@ export default function Chatbot() {
     setIsTyping(true);
 
     window.setTimeout(async () => {
-      const reply = await getChatbotResponse(trimmed);
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now() + 1,
-          sender: "bot",
-          text: reply,
-        },
-      ]);
-      setIsTyping(false);
+      try {
+        const reply = await getChatbotResponse(trimmed);
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: nextMessageIdRef.current++,
+            sender: "bot",
+            text: reply,
+            time: getMessageTime(),
+          },
+        ]);
+      } finally {
+        setIsTyping(false);
+      }
     }, 650);
   };
 
@@ -216,13 +265,31 @@ export default function Chatbot() {
               <span>AI Assistant • Online</span>
               </div>
             </div>
-            <button
-              className="chatbot-close"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close chatbot"
-            >
-              <CloseIcon />
-            </button>
+            <div className="chatbot-header-actions">
+              <button
+                className="chatbot-clear-button"
+                type="button"
+                onClick={() =>
+                  setMessages([
+                    {
+                      id: 1,
+                      sender: "bot",
+                      text: "Hi — I’m Atnafu’s AI portfolio assistant. I can answer questions about his AWS experience, cloud projects, data engineering background, technical skills, and how to contact him.",
+                      time: getMessageTime(),
+                    },
+                  ])
+                }
+              >
+                Clear
+              </button>
+              <button
+                className="chatbot-close"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close chatbot"
+              >
+                <CloseIcon />
+              </button>
+            </div>
           </div>
 
           <div className="chatbot-messages">
@@ -232,12 +299,18 @@ export default function Chatbot() {
                   <div className="bot-avatar">AI</div>
                 )}
 
-                <div className="chatbot-bubble">{message.text}</div>
+                <div>
+                  <div className="chatbot-bubble">{message.text}</div>
+                  <span className="chatbot-message-time">
+                    {message.time || "Just now"}
+                  </span>
+                </div>
               </div>
             ))}
 
             {isTyping && (
               <div className="chatbot-message bot">
+                <div className="bot-avatar">AI</div>
                 <div className="chatbot-bubble chatbot-typing">
                   <span />
                   <span />
@@ -245,6 +318,8 @@ export default function Chatbot() {
                 </div>
               </div>
             )}
+
+            <div ref={messagesEndRef} />
           </div>
 
           <div className="chatbot-suggestions">
