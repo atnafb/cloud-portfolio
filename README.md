@@ -305,8 +305,6 @@ cloud-portfolio/
 |       |-- local_server.py
 |       |-- portfolio-knowledge.json
 |       `-- requirements.txt
-|-- scripts/
-|   `-- generate_business_card.py
 |-- package.json
 `-- vite.config.js
 ```
